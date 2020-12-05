@@ -1,0 +1,30 @@
+replicaCount: 1
+
+service:
+  type: ClusterIp
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+  - host: git.192.168.99.107.nip.io
+    paths:
+      - path: /
+        backend:  
+          service:
+            name: aui-gitea-http
+            port:
+              number: 3000
+
+gitea:
+  ingress:
+    enabled: false
+
+# autoscaling:
+#   enabled: true
+#   minReplicas: 1
+#   maxReplicas: 4
+#   targetCPUUtilizationPercentage: 80
+
+
+
