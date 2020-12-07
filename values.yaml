@@ -15,6 +15,14 @@ ingress:
             name: aui-gitea-http
             port:
               number: 3000
+  - host: wordpress.192.168.99.107.nip.io
+    paths:
+      - path: /
+        backend:
+          service:
+            name: aui-wordpress
+            port:
+              number: 80
 
 gitea:
   ingress:
@@ -23,6 +31,32 @@ gitea:
   resources:
     limits:
       cpu: 100m
+
+wordpress:
+  ingress:
+    enabled: false
+  service:
+    type: ClusterIP
+    clusterIP: 10.111.100.10
+  persistence:
+    size: 1Gi
+    storageClass: standard
+  mariadb:
+    primary:
+      persistence:
+        size: 1Gi
+        storageClass: standard
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPU: 80
+  wordpressUsername: user
+  wordpressPassword: password
+  wordpressEmail: user@example.com
+  wordpressFirstName: Jan
+  wordpressLastName: Kubernetes
+  wordpressBlogName: Jan's Scalable Kubernetes!
 
 autoscaling:
   enabled: true
