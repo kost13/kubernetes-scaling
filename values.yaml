@@ -7,7 +7,7 @@ service:
 ingress:
   enabled: true
   hosts:
-  - host: git.192.168.99.107.nip.io
+  - host: git.192.168.99.100.nip.io
     paths:
       - path: /
         backend:  
@@ -15,7 +15,7 @@ ingress:
             name: aui-gitea-http
             port:
               number: 3000
-  - host: wordpress.192.168.99.107.nip.io
+  - host: wordpress.192.168.99.100.nip.io
     paths:
       - path: /
         backend:
@@ -50,7 +50,7 @@ wordpress:
     enabled: true
     minReplicas: 1
     maxReplicas: 3
-    targetCPU: 80
+    targetCPU: 70
   wordpressUsername: user
   wordpressPassword: password
   wordpressEmail: user@example.com
@@ -64,7 +64,7 @@ autoscaling:
     name: aui-gitea
   minReplicas: 1
   maxReplicas: 4
-  targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 70
 
 
 
