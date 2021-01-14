@@ -50,7 +50,7 @@ wordpress:
     enabled: true
     minReplicas: 1
     maxReplicas: 3
-    targetCPU: 70
+    targetCPU: 50
   wordpressUsername: user
   wordpressPassword: password
   wordpressEmail: user@example.com
@@ -63,8 +63,8 @@ autoscaling:
   scaleTargetRef:
     name: aui-gitea
   minReplicas: 1
-  maxReplicas: 4
-  targetCPUUtilizationPercentage: 70
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
 
 
 
