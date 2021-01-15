@@ -10,7 +10,7 @@ ingress:
   - host: git.192.168.99.100.nip.io
     paths:
       - path: /
-        backend:  
+        backend:
           service:
             name: aui-gitea-http
             port:
@@ -30,7 +30,8 @@ gitea:
 
   resources:
     limits:
-      cpu: 100m
+      # cpu: 100m
+      cpu: 300m
 
 wordpress:
   ingress:
@@ -58,13 +59,15 @@ wordpress:
   wordpressLastName: Kubernetes
   wordpressBlogName: Jan's Scalable Kubernetes!
 
+  resources:
+    limits:
+      cpu: 300m
+
 autoscaling:
   enabled: true
   scaleTargetRef:
     name: aui-gitea
   minReplicas: 1
   maxReplicas: 3
-  targetCPUUtilizationPercentage: 50
-
-
-
+  targetCPU: 50
+  scaleDownStabilizationTime: 30
