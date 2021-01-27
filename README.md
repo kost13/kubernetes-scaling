@@ -1,5 +1,13 @@
-# Kubernetes-scaling
-Helm Chart with services auto-scaling
+# kubernetes-scaling
+Helm Chart with services prepared for auto-scaling analysis.
+
+### Services
+- [WordPress](https://hub.kubeapps.com/charts/bitnami/wordpress)
+- [Gitea](https://gitea.com/gitea/helm-chart/)
+
+### Overview
+Aim of the project was to create own Helm chart that configures all services as its subcharts. The Horizontal Pod Autoscalers and Ingress were also implemented.
+The system is also extended with [JMeter-Operator](https://github.com/kubernauts/jmeter-operator) that enables running load tests of both services and presenting the results in Grafana tool.
 
 # Perform tests with Apache Jmeter
 
