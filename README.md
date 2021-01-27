@@ -9,7 +9,7 @@ Helm Chart with services auto-scaling.
 Aim of the project was to create own Helm chart that configures all services as its subcharts. The Horizontal Pod Autoscalers and Ingress were also implemented.
 The system is also extended with [JMeter-Operator](https://github.com/kubernauts/jmeter-operator) that enables running load tests of both services and presenting the results in Grafana tool.
 
-# Perform tests with Apache Jmeter
+## Perform tests with Apache Jmeter
 
 Remember to properly set or replace variables in following steps
 
