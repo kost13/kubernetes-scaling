@@ -1,5 +1,5 @@
 # kubernetes-scaling
-Helm Chart with services prepared for auto-scaling analysis.
+Helm Chart with services auto-scaling.
 
 ### Services
 - [WordPress](https://hub.kubeapps.com/charts/bitnami/wordpress)
